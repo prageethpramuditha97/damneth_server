@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
     });
 });
 
+// Test API
+app.get("/test", (req, res) => {
+    res.send("Success");
+});
+
 // Server port
 const PORT = process.env.PORT || 5000;
 

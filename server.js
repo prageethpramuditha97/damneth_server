@@ -31,14 +31,17 @@ app.get("/api/db-test", async (req, res) => {
         });
 
     } catch (error) {
-        console.error("MySQL Error:", error.message);
+        console.error("MYSQL CONNECTION ERROR:", error);
 
         res.status(500).json({
             success: false,
-            message: "MySQL Connection Failed"
+            message: "MySQL Connection Failed",
+            error_code: error.code,
+            error_message: error.message
         });
     }
 });
+
 
 const PORT = process.env.PORT || 5000;
 
